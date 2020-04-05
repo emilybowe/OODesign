@@ -9,13 +9,8 @@ public class Money {
         this.value = value;
         this.currency = currency;
     }
-    public double getValue() {
-        return value;
-    }
-    public void setValue(double value) {
-        this.value = value;
-    }
-    public Currency getCurrency() {return currency;}
+
+
 }
 class Test {
     private static void dispenseFunds (Money amount) {}
