@@ -23,14 +23,7 @@ class Test {
     public static void test() {
         Money balance = new Money(1.0, Currency.USD);
         Money request = new Money(3.0, Currency.EURO);
-
-        double normalizedBalance = balance.getValue() *
-                balance.getCurrency()
-                        .conversionRateTo(Currency.USD);
-        double normalizedRequest = request.getValue() *
-                request.getCurrency()
-                        .conversionRateTo(Currency.USD);
-        if(normalizedBalance > normalizedRequest) {
+        if(balance.isGreaterThan(request)) {
             dispenseFunds(request);
         }
     }
