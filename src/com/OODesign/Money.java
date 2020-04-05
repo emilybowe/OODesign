@@ -9,8 +9,14 @@ public class Money {
         this.value = value;
         this.currency = currency;
     }
-
-
+    private double normalized() {
+        return currency == Currency.USD
+                ? value
+                : value * currency.conversionRateTo(Currency.USD);
+    }
+    public boolean isGreaterThan(Money amount) {
+        return (normalized() > amount.normalized());
+    }
 }
 class Test {
     private static void dispenseFunds (Money amount) {}
